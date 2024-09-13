@@ -1,0 +1,20 @@
+[package]
+name="model"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/mod.rs"
+
+[dependencies]
+sea-orm = {workspace = true}
+macros = {path = "../macros"}
+serde = {workspace = true}
+utils = {path = "../utils"}
+async-trait = {workspace = true}
+chrono = {workspace = true}
+
+[[example]]
+name="query"
+path = "examples/query.rs"
+

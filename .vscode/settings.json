@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.trace.server": "off",
+    "rust-analyzer.server.path": "/Users/xunfei/.rustup/toolchains/stable-aarch64-apple-darwin/bin/rust-analyzer",
+    "rust-analyzer.procMacro.enable": true
+}

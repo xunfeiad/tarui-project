@@ -1,0 +1,33 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name= "server"
+path="src/bin/server.rs"
+
+[dependencies]
+actix-web = { version = "4", features = ["openssl"] }
+tokio={workspace=true}
+tracing = "0.1"
+tracing-subscriber = "0.3.0"
+openssl = { version = "0.10.65" }
+actix-ws="0.3"
+futures-util="0.3"
+rand="0.8"
+error = {path = "../error"}
+anyhow = {workspace = true}
+log={workspace = true}
+serde = {workspace = true, features =["derive"]}
+crud = {path = "../crud"}
+model = {path = "../model"}
+sea-orm = {workspace = true}
+schema = {path = "../schema"}
+actix-cors = "0.7"
+utils = {path = "../utils"}
+deadpool-redis = {workspace = true}
+tera = {workspace = true}
+dotenv = "0.15"
+env_logger = "0.11"
+
