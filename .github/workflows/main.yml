@@ -1,7 +1,7 @@
 name: Build and release
 on:
   push:
-    branches: [feature-testci]
+    branches: [main]
   workflow_dispatch:
 jobs:
   release:
