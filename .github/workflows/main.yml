@@ -18,8 +18,6 @@ jobs:
         platform: [macos-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-      - name: mkdir build dir
-        run: mkdir build
       # 检出存储库
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -51,7 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: ${{ github.ref_name }}
-          releaseName: 'XTools v__VERSION__'
+          releaseName: 'Redog v__VERSION__'
           releaseBody: 'See the assets to download and install this version.'
           releaseDraft: true
           prerelease: false

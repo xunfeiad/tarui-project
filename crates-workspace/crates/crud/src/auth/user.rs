@@ -129,6 +129,7 @@ pub fn validate_jwt(token: &str) -> RtcResult<usize> {
     Ok(id)
 }
 
+
 pub fn sha256_hash(str: &str) -> String {
     let mut hasher = Sha512::new();
     hasher.update(str);
