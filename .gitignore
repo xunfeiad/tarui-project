@@ -21,4 +21,9 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # API
-crate-workspace/target/
+crates-workspace/target/*
+
+# Config
+.svelte-kit
+.vscode
+.idea/*
