@@ -27,5 +27,3 @@ crates-workspace/target/*
 .svelte-kit
 .vscode
 .idea/*
-
-1
