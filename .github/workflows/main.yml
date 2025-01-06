@@ -53,3 +53,31 @@ jobs:
           releaseBody: 'See the assets to download and install this version.'
           releaseDraft: true
           prerelease: false
+
+
+      # 验证打包结果
+      - name: Verify release artifacts
+        if: ${{ matrix.platform == 'macos-latest' }}
+        run: |
+          if [ ! -f "src-tauri/target/release/bundle/dmg/*.dmg" ]; then
+            echo "Error: DMG file not found!"
+            exit 1
+          fi
+
+      - name: Verify release artifacts (Windows)
+        if: ${{ matrix.platform == 'windows-latest' }}
+        run: |
+            if not exist "src-tauri\\target\\release\\bundle\\msi\\*.msi" (
+              echo "Error: MSI file not found!"
+              exit 1
+            )
+
+      # 上传打包文件到 Release
+      - name: Upload release assets
+        uses: actions/upload-release-asset@v1
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          release_id: ${{ steps.build_tauri.outputs.release_id }}
+          asset_path: "src-tauri/target/release/bundle/**/*"
+          asset_name: ${{ matrix.platform }}-redog
+          asset_content_type: application/octet-stream
