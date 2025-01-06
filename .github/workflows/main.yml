@@ -1,9 +1,9 @@
-name: 'publish'
+name: Create Release And Upload assets
 
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
   publish-tauri:
